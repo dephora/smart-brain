@@ -1,16 +1,30 @@
 import React from 'react';
 
-const Rank = ({ name, entries }) => {
-  return (
-    <div>
-      <div className='white f3'>
-        {`${name}, your current entry count is...`}
+class Rank extends React.Component {
+  state = {
+    emoji: ''
+  }
+
+  componentDidMount () {
+    // this.generateEmoji(this.props.entries)
+  }
+
+  generateEmoji = (entries) => {
+    // serverless fetch
+  }
+
+  render () {
+    return (
+      <div>
+        <div className='white f3'>
+          {`${this.props.name}, your current entry count is...`}
+        </div>
+        <div className='white f1'>
+          {this.props.entries}
+        </div>
       </div>
-      <div className='white f1'>
-        {entries}
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Rank;
